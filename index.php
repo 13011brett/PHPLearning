@@ -27,10 +27,28 @@
       
         <?php
 
+use PgSql\Lob;
+
         $myVar = "from new beginnings. ";
         $thisVar = "the end. ";
         $thisBool = false;
-        echo "This is " . (($thisBool == true) ? $myVar : $thisVar);  
+
+
+        $mySongs = ["Let It Go", "You're Gonna Go Far Kid", "Make A Man Out Of You"];
+        $myBooks = [
+          [
+            'name' => 'Ulysses (1992)',
+            'author' => 'James Joyce',
+            'link' => 'https://en.wikipedia.org/wiki/Ulysses_(novel)'
+          ],
+          [
+            'name' => 'The Great Gatsby',
+            'author' => 'F. Scott Fitzgerald',
+            'link' => 'http://en.wikipedia.org/wiki/The_Great_Gatsby'
+          ]
+
+
+        ];
         
         
         ?>
@@ -40,14 +58,17 @@
 
       </h1>
       
-      <h5>
+    
+
+      <ul>
         <?php
 
+        foreach ($myBooks as $book) : ?>
+        <li> <?= $book['name']; ?><ul> <?= $book['author']; ?> </li></ul> </li>
+        <?php endforeach ?>
+      </ul>
+      
 
-
-        
-        ?>
-      </h5>
 
     </body>
 </html> 
