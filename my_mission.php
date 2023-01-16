@@ -6,6 +6,7 @@
         $myVar = "from new beginnings. ";
         $thisVar = "the end. ";
         $thisBool = false;
+        $heading = 'The Mission';
 
 
         $mySongs = ["Let It Go", "You're Gonna Go Far Kid", "Make A Man Out Of You"];
@@ -44,8 +45,8 @@
         $filteredBooks = filter($myBooks, function($book){
             return ($book['name'] === 'test');
         });
-
-        require "my_mission.view.php";
+        require "./functions.php";
+        require "views/my_mission.view.php";
         ?>
       
     

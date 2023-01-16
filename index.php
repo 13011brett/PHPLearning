@@ -6,6 +6,7 @@
         $myVar = "from new beginnings. ";
         $thisVar = "the end. ";
         $thisBool = false;
+        $heading = 'Home';
 
 
         $mySongs = ["Let It Go", "You're Gonna Go Far Kid", "Make A Man Out Of You"];
@@ -45,7 +46,9 @@
             return ($book['name'] === 'test');
         });
 
-        require "index.view.php";
+
+        require "./functions.php";
+        require "views/index.view.php";
         ?>
       
     
