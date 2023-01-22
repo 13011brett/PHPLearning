@@ -7,8 +7,10 @@ require 'Database.php';
 
 $config = require('config.php');
 $db = new Database($config['database']);
+$id = $_GET['id'];
+$query = "select title from posts where id = ?";
 
-$posts = $db->query("select title from posts where id = 2")->fetchall(PDO::FETCH_ASSOC);
+$posts = $db->query($query, [$id])->fetch(PDO::FETCH_ASSOC);
 
 
 

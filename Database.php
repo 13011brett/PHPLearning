@@ -19,13 +19,13 @@ class Database
         ]);
     }
 
-    public function query($myQuery)
+    public function query($myQuery, $params = [])
     {
 
 
         $statement = $this->connection->prepare("{$myQuery}");
 
-        $statement->execute();
+        $statement->execute($params);
 
         return $statement;
     }
