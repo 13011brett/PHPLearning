@@ -12,7 +12,14 @@
                         Go back...
                     </a>
                 </p>
-                <p><?= $note['body'] ?></p>
+
+                <p><?php if(!$note){
+                    echo "Note could not be found or is inaccessible.";
+                    }
+                    else{
+                        echo $note['body'];
+                    }  ?>
+
 
             </div>
         </main>
