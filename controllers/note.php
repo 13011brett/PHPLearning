@@ -12,6 +12,7 @@
         $heading = "Note# {$note['id']}";
         $currentUserId = 1;
 
+
         if(!$note){
 
             abort(404);

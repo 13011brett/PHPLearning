@@ -4,6 +4,8 @@ class Database
 {
     public $connection;
 
+    public $statement;
+
 
     public function __construct($config, $username = 'brettowns', $password = '13011brett')
     {
@@ -23,11 +25,21 @@ class Database
     {
 
 
-        $statement = $this->connection->prepare("{$myQuery}");
+        $this->statement = $this->connection->prepare("{$myQuery}");
 
-        $statement->execute($params);
+        $this->statement->execute($params);
 
-        return $statement;
+        return $this;
+    }
+
+    public function fetch()
+    {
+        return $this->statement->fetch();
+    }
+    public function fetchAll(){
+        return $this->statement->fetchAll();
     }
 }
+
+
 
