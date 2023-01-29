@@ -32,6 +32,7 @@ class Database
         return $this;
     }
 
+
     public function fetch()
     {
         return $this->statement->fetch();
@@ -39,6 +40,16 @@ class Database
     public function fetchAll(){
         return $this->statement->fetchAll();
     }
+
+    public function fetchOrFail(){
+        $result = $this->fetch();
+        if(!$result) {
+            abort(Response::NOT_FOUND);
+        }
+        return $result;
+    }
+
+
 }
 
 

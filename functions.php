@@ -13,4 +13,12 @@ function dd($value)
     die();
 }
 
+function authorize($condition, $status = Response::FORIBDDEN){
+        if(!$condition){
+            abort($status);
+        }
+    }
+
+
+
 ?>
