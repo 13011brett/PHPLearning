@@ -9,9 +9,9 @@ require 'partials/banner.php';
         <p class="py-6 sm:px-6 text-bold"> Welcome to the Notes Page!</p>
         <ul>
             <?php foreach ($notes as $note) : ?>
-                <li>
+                <li class="py-2">
                     <a href="/note?id=<?= $note['id'] ?>" class="text-red-500 hover:underline hover:text-blue-500">
-                        <?= $note['body'] ?>
+                        <?= htmlspecialchars($note['subject']) ?>
                     </a>
                 </li>
             <?php endforeach ?>

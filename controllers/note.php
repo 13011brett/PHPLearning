@@ -9,7 +9,7 @@
 
         $note = $db->query("select * from notes where id = ?", [$_GET['id']])->fetchOrFail(PDO::FETCH_ASSOC);
 
-        $heading = "Note# {$note['id']}";
+        $heading = htmlspecialchars($note['subject']);
         $currentUserId = 1;
 
 

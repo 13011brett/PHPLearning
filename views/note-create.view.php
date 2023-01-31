@@ -28,18 +28,18 @@ require 'partials/banner.php';
                             <div class="space-y-6 bg-white px-4 py-5 sm:p-6 flex flex-col">
                                 <div class="grid grid-cols-3 gap-6">
                                     <div class="col-span-3 sm:col-span-2">
-                                        <label for="company-website" class="block text-sm font-medium text-gray-700">Subject</label>
+                                        <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
                                         <div class="mt-1 flex rounded-md shadow-sm flex-grow w-48">
 
-                                            <input type="text" name="company-website" id="company-website" class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="My First Note!">
+                                            <input type="text" name="subject" id="subject" class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="My First Note!" required>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label for="about" class="block text-sm font-medium text-gray-700">Notes</label>
+                                    <label for="body" class="block text-sm font-medium text-gray-700">Notes</label>
                                     <div class="mt-1">
-                                        <textarea id="about" name="about" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="The ability to store notes... such power."></textarea>
+                                        <textarea id="body" name="body" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="The ability to store notes... such power." required></textarea>
                                     </div>
 
                                 </div>

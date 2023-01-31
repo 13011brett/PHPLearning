@@ -17,7 +17,7 @@
                     echo "Note could not be found or is inaccessible.";
                     }
                     else{
-                        echo $note['body'];
+                        echo htmlspecialchars($note['body']);
                     }  ?>
 
 
