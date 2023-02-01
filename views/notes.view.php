@@ -17,7 +17,8 @@ require 'partials/banner.php';
             <?php endforeach ?>
         </ul>
         <div class=" py-20 flex justify-evenly">
-            <a class="text-blue-500 hover:underline hover:text-blue-800 mt-5" href="/notes/create">Create a new note!</a>
+            <a class="text-blue-500 hover:underline hover:text-blue-800 mt-5" href="/notes/create">Create a new
+                note!</a>
             <!--<button href="/note/create" class="bg-blue-700 text-white rounded px-5 py-5 mt-3 mr-2 mb-2  text-left rounded-lg text-sm mb-2 font-medium focus:ring-4 hover:bg-blue-700 ">Create a Note</button>
             <button class="bg-blue-700 text-white rounded px-5 py-5 mt-3 mr-2 mb-2  text-left rounded-lg text-sm mb-2 font-medium focus:ring-4 hover:bg-blue-700">Delete a Note</button>-->
         </div>
