@@ -9,10 +9,10 @@ $maxChar = 1000;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $errors = [];
-    if(Validator::textValidator($_POST['body'], 1, $maxChar)){
+    if(! Validator::textValidator($_POST['body'], 1, $maxChar)){
         $errors['body'] = "A body of no more than {$maxChar} characters is required.";
     }
-    if(Validator::textValidator($_POST['subject'],1,30)){
+    if(! Validator::textValidator($_POST['subject'],1,30)){
         $errors['subject'] = "A subject of no more than 30 characters is allowed";
     }
 

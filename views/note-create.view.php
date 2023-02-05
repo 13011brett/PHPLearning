@@ -46,9 +46,10 @@ require 'partials/banner.php';
                                                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                                                   placeholder="The ability to store notes... such power."
                                                   required
-                                        ><?= ($_POST['body']) ?? ''  ?> </textarea>
-                                        <?php if (isset($errors['body'])) : ?>
-                                            <p class="text-red-500 mt-5"> <?= $errors['body']  ?> </p>
+                                        ><?= ($_POST['body']) ?? '' ?> </textarea>
+                                        <?php if (isset($errors['body']) || isset($errors['subject'])) : ?>
+                                            <p class="text-red-500 mt-5"> <?php foreach ($errors as $error) {
+                                                    echo $error; ?> <br> <?php } ?> </p>
                                         <?php endif; ?>
                                     </div>
 
