@@ -34,7 +34,10 @@ require 'partials/banner.php';
 
                                             <input type="text" name="subject" id="subject"
                                                    class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                                                   placeholder="My First Note!" required>
+                                                   placeholder="My First Note!"
+                                                value="<?= ($_POST['subject']) ?? '' ?>"
+                                                   required>
+
                                         </div>
                                     </div>
                                 </div>
