@@ -19,6 +19,10 @@ function authorize($condition, $status = Response::FORIBDDEN){
         }
     }
 
+    function base_path($value){
+    return BASE_PATH . $value;
+    }
+
 
 
 ?>

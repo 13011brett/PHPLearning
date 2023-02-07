@@ -1,6 +1,6 @@
 <?php
 $heading = "Home";
-require "views/index.view.php";
+require base_path("views/index.view.php");
 
       
     
