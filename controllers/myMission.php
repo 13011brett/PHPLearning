@@ -1,10 +1,8 @@
+<?php
+view("mission.view.php", [
+    'heading' => 'Mission'
 
-      
-        <?php
-
-        $heading = 'Mission';
-        //require '../functions.php';
-        require 'views/mission.view.php';
+]);
 
       
     

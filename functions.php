@@ -23,6 +23,13 @@ function authorize($condition, $status = Response::FORIBDDEN){
     return BASE_PATH . $value;
     }
 
+    function view($value, $attributes = []){
+
+        extract($attributes);
+
+        require base_path('views/') . $value;
+    }
+
 
 
 ?>

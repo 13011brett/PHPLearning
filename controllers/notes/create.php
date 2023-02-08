@@ -1,14 +1,15 @@
 <?php
 
-$config = require('config.php');
+$config = require base_path('config.php');
 $db = new Database($config['database']);
-require('Validator.php');
+require base_path('Validator.php');
 
 $heading = 'Create Note';
 $maxChar = 1000;
+$errors = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $errors = [];
+
     if(! Validator::textValidator($_POST['body'], 1, $maxChar)){
         $errors['body'] = "A body of no more than {$maxChar} characters is required.";
     }
@@ -25,4 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-require 'views/notes/create.php';
+view('notes/create.php', [
+    'heading' => 'My Notes',
+    'errors' => $errors
+]);
