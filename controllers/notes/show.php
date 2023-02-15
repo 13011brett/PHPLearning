@@ -9,6 +9,7 @@ $currentUserId = 1;
 
 $note = $db->query("select * from notes where id = ?", [$_GET['id']])->fetchOrFail();
 authorize($note['user_id'] === $currentUserId);
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $db->query('delete from notes where id = ?', [$_GET['id']]);
