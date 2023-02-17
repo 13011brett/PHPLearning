@@ -11,11 +11,10 @@ $note = $db->query("select * from notes where id = ?", [$_GET['id']])->fetchOrFa
 authorize($note['user_id'] === $currentUserId);
 
 
-view('notes/show.view.php', [
-    'heading' => htmlspecialchars($note['subject']),
-    'note' => $note
-]);
+$db->query('delete from notes where id = ?', [$_POST['id']]);
+header('location:/notes');
 
+exit();
 
       
     
