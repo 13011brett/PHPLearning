@@ -16,13 +16,12 @@ require base_path('views/partials/banner.php');
                 echo "Note could not be found or is inaccessible.";
             } else {
                 echo htmlspecialchars($note['body']);
-            } ?>
-            <form class="mt-6" method="POST">
-                <input type="hidden" name="_method" value="DELETE">
-                <input type="hidden" name="id" value="<?= $note['id'] ?>">
+            } ?> </p>
 
-                <button class="text-red-500 text-sm"> Delete </button>
-            </form>
+        <footer class="mt-6 ">
+            <a href="/note/edit?id=<?=$note['id']?>" class="text-gray-500 border border-current px-4 py-1 rounded"> Edit </a>
+        </footer>
+
 
 
     </div>
