@@ -2,9 +2,9 @@
 
 use Core\Database;
 use Core\Validator;
+use Core\App;
 
-$config = require base_path('config.php');
-$db = new Database($config['database']);
+$db = App::resolve('Core\Database');
 require base_path('Core/Validator.php');
 
 $heading = 'Create Note';
@@ -23,6 +23,7 @@ if (!empty($errors)){
         'heading' => 'My Notes',
         'errors' => $errors
     ]);
+    die();
 }
 
    $db->query('INSERT INTO notes(body, user_id, subject) VALUES(:body, :id, :subject )', [
