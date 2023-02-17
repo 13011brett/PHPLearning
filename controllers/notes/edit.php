@@ -7,10 +7,10 @@ use Core\App;
 $db = App::resolve('Core\Database');
 require base_path('Core/Validator.php');
 
-$heading = 'Create Note';
+$heading = 'Edit Note';
 
 
-view('notes/create.view.php', [
-    'heading' => 'My Notes',
+view('notes/edit.view.php', [
+    'heading' => 'Edit Note',
     'errors' => $errors
 ]);

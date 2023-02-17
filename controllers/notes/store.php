@@ -19,7 +19,7 @@ if (!Validator::textValidator($_POST['subject'], 1, 30)) {
     $errors['subject'] = "A subject of no more than 30 characters is allowed";
 }
 if (!empty($errors)){
-    view('notes/create.php', [
+    view('notes/create.view.php', [
         'heading' => 'My Notes',
         'errors' => $errors
     ]);
