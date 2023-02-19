@@ -16,7 +16,34 @@ services:
 
   # PHP Service
   php:
-    image: php:8.1-fpm
+    build: ./.docker/php
     working_dir: /var/www/php
     volumes:
       - ./src:/var/www/php
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+    # MySQL Service
+  mysql:
+    build: ./.docker/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_DATABASE: myapp
+    ports:
+      - 3306:3306
+    volumes:
+      - ./.docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - mysqld:/var/lib/mysql
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
+      interval: 5s
+      retries: 10
+    
+    
+# TO-DO: Create a migration file that automatically makes the Note DB
+# Volumes
+volumes:
+
+  mysqld:
