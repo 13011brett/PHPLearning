@@ -12,5 +12,4 @@ $heading = 'Create Note';
 
 view('notes/create.view.php', [
     'heading' => 'My Notes',
-    'errors' => $errors
 ]);

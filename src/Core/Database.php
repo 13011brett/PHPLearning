@@ -15,7 +15,7 @@ class Database
     {
 
 
-        $dsn = 'mysql:' . (http_build_query($config, null,";" ));
+        $dsn = 'mysql:' . (http_build_query($config, '',";" ));
 
 
 
