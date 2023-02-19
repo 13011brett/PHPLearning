@@ -42,7 +42,7 @@ services:
       retries: 10
     
     
-# TO-DO: Create a migration file that automatically makes the Note DB
+# TO-DO: Create a migration file that automatically makes the Users Table populate
 # Volumes
 volumes:
 

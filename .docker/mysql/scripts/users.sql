@@ -25,3 +25,6 @@ create index user_id
     on myapp.notes (user_id);
 
 
+INSERT INTO myapp.users (name, email)
+VALUES ('tester', 'tester@test.com');
+
