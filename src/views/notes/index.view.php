@@ -12,7 +12,12 @@ require base_path('views/partials/banner.php');
                 <li class="py-2">
                     <a href="/note?id=<?= $note['id'] ?>" class="text-red-500 hover:underline hover:text-blue-500">
                         <?= htmlspecialchars($note['subject']) ?>
+                            -
+                        <?= htmlspecialchars($note['body']) ?>
                     </a>
+                    <p>
+                        
+                    </p>
                 </li>
             <?php endforeach ?>
         </ul>
