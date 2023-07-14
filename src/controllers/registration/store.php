@@ -7,6 +7,8 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $errors = [];
+
+session_start();
 if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 
     $errors['email'] = 'Please provide a valid email address.';
@@ -42,7 +44,7 @@ if($user){
     ]);
 
     $_SESSION['user'] = [
-        'email' => $email
+        'name' => $name
     ];
 
     header('location: /');
