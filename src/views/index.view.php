@@ -1,5 +1,4 @@
 <?php
-session_start();
 require ('partials/header.php');
 require ("partials/nav.php");
 require ('partials/banner.php');
