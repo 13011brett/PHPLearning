@@ -1,7 +1,7 @@
 <?php
 
 namespace Core;
-use Core\Middleware;
+use Core\Middleware\Middleware;
 class Router
 {
     
@@ -70,13 +70,19 @@ class Router
         session_start();
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
-                if($route['middleware'] == 'guest'){ 
-                    (new Middleware\Guest)->handle();
+                if($route['middleware']){
+                    $middleware = Middleware::MAP[$route['middleware']];
+
+                    (new $middleware)->handle();
+                }
+                
+                // if($route['middleware'] == 'guest'){ 
+                //     (new Middleware\Guest)->handle();
                     
-                }
-                if($route['middleware'] == 'auth'){
-                    (new Middleware\Auth)->handle();
-                }
+                // }
+                // if($route['middleware'] == 'auth'){
+                //     (new Middleware\Auth)->handle();
+                // }
                 return require base_path($route['controller']);
             }
         }
