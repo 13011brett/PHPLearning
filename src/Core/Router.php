@@ -70,11 +70,7 @@ class Router
         session_start();
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
-                if($route['middleware']){
-                    $middleware = Middleware::MAP[$route['middleware']];
-
-                    (new $middleware)->handle();
-                }
+                Middleware::resolve($route['middleware']);
                 
                 // if($route['middleware'] == 'guest'){ 
                 //     (new Middleware\Guest)->handle();
